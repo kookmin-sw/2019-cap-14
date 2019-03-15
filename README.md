@@ -1,68 +1,62 @@
-# Welcome to GitHub
+# 로컬 가이드 매칭 및 여행 트랜드 제공(Co-meet)
 
+<<<<<<< HEAD
+국민대학교 소프트웨어학부 캡스톤 프로젝트 14조
+
+## 1. 프로잭트 소개
+=======
 캡스톤 팀 생성을 축하합니다.
 123
 ## 팀소개 및 페이지를 꾸며주세요.
+>>>>>>> becb120ef04d0b9dcd1958ec6f09b0f6c75e91c4
 
-- readme.md 수정.
-
-- index.md 예시보고 수정.
-
-- 수정후 팀페이지 확인하여 점검.
-
-**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
-
-**예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
-
-## readme파일에 아래와 같은 내용들을 추가하세요.
-
-### 1. 프로잭트 소개
-
-프로젝트
-
-### 2. 소개 영상
-
-프로젝트 소개하는 영상을 추가하세요
-
-### 3. 팀 소개
-
-팀을 소개하세요.
-
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
-
-### 4. 사용법
-
-소스코드제출시 설치법이나 사용법을 작성하세요.
-
-### 5. 기타
-
-추가적인 내용은 자유롭게 작성하세요.
+본 프로젝트는 외국인에게 새로운 한국의 관광문화 플랫폼을 제공함에 의의를 둔다.
+외국인이 한국 관광을 오기 위해 정보 검색을 하고자 한다면 언어의 장벽이 있어 몇 없는 자국민 블로거의 후기나 여행사의 도움을 받을 수 밖에 없다. 그렇기에 외국 관광객들은 한국 현지인들과 정보의 질과 양 면에서 극명한 차이를 보인다. 재미있고 실속 있는, 현재 유행하는 관광 정보들은 현지인 사이에서만 유통되어 생기는 정보의 비대칭을 완화하고자 한다.
+총 두 가지의 해결방안을 제시하고자 한다.
+한국의 SNS 상에 퍼져 있는 여행 정보 빅데이터를 얻어와 특정 기준을 잡고 정보를 분석, 현재 한국의 트랜드를 볼 수 있는 키워드를 여행자에게 제공한다. 지역의 맛집, 놀거리 등 현재 가장 인기있는 키워드를 시각적으로 제공하여 본인에게 맞는 관광 테마, 카테고리를 지정할 수 있다.
+키워드 정보만으로는 정보 불균형을 완화시킬 수 없다. 커밋은 여행객에게 현지 로컬을 매칭, 그들만의 투어를 새로 만들 수 있도록 도움을 준다. 간단한 인증 단계를 거친 로컬들은 자신만의 테마, 여행 팁을 가지고 있으며 외국어 능력(레벨 부여)을 보유해야만 한다. 여행객들은 로컬을 선택, SNS 채팅 대화를 통해 여행을 계획하는 동시에 글로벌 친구를 만들 수 있다.
 
 
-## Markdown을 사용하여 내용꾸미기
+## 2. 소개 영상
 
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
+
+
+## 3. 팀 소개
+
+### -지도 교수 : 김인규 교수님
+
+### -이정준
+
+이미지
 
 ```markdown
-Syntax highlighted code block
+* e-mail : ejuju1997@naver.com
+* role : 팀장, AWS 개발, 웹 크롤링을 이용한 빅 데이터 수집 및 분석 시스템 개발
+```
+### -양동혁
 
-# Header 1
-## Header 2
-### Header 3
+이미지
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```markdown
+* e-mail : vibgyor96@icloud.com
+* role : 팀원, User/Web Interface 담당, Front-end 개발
 ```
 
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### -조성주
 
-### Support or Contact
+이미지
 
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
+```markdown
+* e-mail : tjdwn2032@naver.com
+* role : 팀원, DB 설계 및 DB Query 시스템 개발, Front-end 개발
+```
+
+
+### -최필준
+
+이미지
+
+```markdown
+* e-mail : abzi110@kookmin.ac.kr
+* role : 팀원, AWS 개발, 웹 크롤링을 이용한 빅 데이터 수집 및 분석 시스템 개발
+```
