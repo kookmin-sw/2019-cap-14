@@ -14,7 +14,6 @@
 ## 2. 소개 영상
 
 [![comeet](http://img.youtube.com/vi/HoR4ngWcaEA/0.jpg)](https://www.youtube.com/watch?v=HoR4ngWcaEA "comeet")
-<iframe width="560" height="315" src="http://www.youtube.com/embed/https://youtu.be/HoR4ngWcaEA?&showinfo=0&fs=0&vq=auto&rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## 3. 팀 소개
 ### -이정준
