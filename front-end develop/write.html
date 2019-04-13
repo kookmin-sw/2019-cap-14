@@ -1,0 +1,171 @@
+<!doctype html>
+<!--영어 번역 필요-->
+<!--영어와 한글 둘 다 서비스 하는 홈페이지 그 버전? 나누는 html 기법 알아볼 것-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      .write-page {
+        width: 500px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+      .form .inputsth {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .form .inputsmall {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 49%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .content-area {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 300px;
+      }
+      .content-areashort {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 150px;
+      }
+      .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        font-family: "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="write-page">
+      <div class="form">
+        <form class="write-form">
+          <input class="inputsth" type="text" placeholder="제목"/>
+          <div class="control-group">
+            <h3>대표 사진 썸네일 첨부:</h3><br><br>
+            <!--파일 업로드 코드 추가 필요-->
+
+            <h3>컨텐츠 설명:</h3>
+            <textarea class="content-areashort">카드 섹션에 들어갈 내용입니다. 짧게 본인만의 투어를 설명해주세요.</textarea>
+
+            <h3>여행 테마 선택</h3>
+            <label class="control control--radio">히든플레이스
+              <input type="checkbox" checked="checked"/>
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio">로컬 맛집 투어
+              <input type="checkbox"/>
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio">음악, 춤
+              <input type="checkbox"/>
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio">쇼핑
+              <input type="checkbox"/>
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio">힐링
+              <input type="checkbox"/>
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio">관광
+              <input type="checkbox"/>
+              <div class="control__indicator"></div>
+            </label>
+          </div>
+
+          <div class="control-group">
+            <h3>여행 장소 선택</h3>
+            <!--개발 초기 특정 장소 서비스만 제공. 추후 장소 검색창 서비스 제공하여 원하는 어떤 지역도 가능하도록.
+            장소 통계자료 알아보고 외국인 선호 지역이나 한국 유명 관광지로 일단 리스트 추릴 것.
+            라디오 버튼 앞선 내용과 통합되어 하나밖에 선택되지 않는다 수정 요망-->
+            <label class="control control--radio">홍대
+              <input type="radio" name="radio" checked="checked"/>
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio">건대
+              <input type="radio" name="radio"/>
+              <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio">광화문, 종로
+              <input type="radio" name="radio"/>
+              <div class="control__indicator"></div>
+            </label>
+          </div>
+
+          <h3>컨텐츠 설명:</h3>
+          <textarea class="content-area">여행 내용 설명해주세요.</textarea>
+
+          <h3>필요 경비(예상):</h3>
+          <input class="inputsth" type="text" placeholder="$"/>
+
+          <!--달력 html 소스 따올 것-->
+          <h3>가능한 시간:</h3>
+          <input class="inputsmall" type="text" placeholder="요일"/>
+          <input class="inputsmall" type="text" placeholder="시간"/>
+
+          <button>작성</button>
+        </form>
+      </div>
+    </div>
+  </body>
