@@ -2,7 +2,7 @@
 
 국민대학교 소프트웨어학부 캡스톤 프로젝트 14조
 
-## 1. 프로잭트 소개
+## 1. 프로젝트 소개
 
 본 프로젝트는 외국인에게 새로운 한국의 관광문화 플랫폼을 제공함에 의의를 둔다.
 외국인이 한국 관광을 오기 위해 정보 검색을 하고자 한다면 언어의 장벽이 있어 몇 없는 자국민 블로거의 후기나 여행사의 도움을 받을 수 밖에 없다. 그렇기에 외국 관광객들은 한국 현지인들과 정보의 질과 양 면에서 극명한 차이를 보인다. 재미있고 실속 있는, 현재 유행하는 관광 정보들은 현지인 사이에서만 유통되어 생기는 정보의 비대칭을 완화하고자 한다.
@@ -51,3 +51,9 @@
 * e-mail : abzi110@kookmin.ac.kr
 * role : 팀원, AWS 개발, 웹 크롤링을 이용한 빅 데이터 수집 및 분석 시스템 개발
 ```
+
+## 4. Abstract
+
+The project is meaningful in providing foreigners with a new Korean tourism and cultural platform. If a foreigner wants to search information to come to Korea for a tour, there is a barrier to language, which is why he or she has to get help from a few local bloggers or travel agencies. That's why foreign tourists show significant differences in the quality and quantity of information with Korean locals. We want to mitigate the asymmetry of information caused by the circulation of current tourist information among local people. We would like to present two solutions in total.
+First, it gets Bigdata on travel information spread on social networking sites in Korea, sets certain criteria and analyzes information, and provides travelers with keywords to see current trends in Korea. Visitors can visually provide the most popular keywords, such as local restaurants and entertainment, to designate tourism themes and categories that suit them.
+Second, Co-meet helps travelers match locals and create new tours of their own. Local people who have undergone a simple certification phase have their own themes, travel tips, and must have foreign language skills. Travelers can make global friends while planning trips via e-mail after choosing local.
