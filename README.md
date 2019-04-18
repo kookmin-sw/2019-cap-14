@@ -22,7 +22,7 @@
 
 ```markdown
 * e-mail : ejuju1997@naver.com
-* role : 팀장, AWS 개발, 웹 크롤링을 이용한 빅 데이터 수집 및 분석 시스템 개발
+* role : 팀장, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end개발
 ```
 ### -양동혁
 
@@ -30,7 +30,7 @@
 
 ```markdown
 * e-mail : vibgyor96@icloud.com
-* role : 팀원, User/Web Interface 담당, Front-end 개발
+* role : 팀원, AWS를 이용한 웹 환경 구축과 데이터베이스 설계, 작성, 관리
 ```
 
 ### -조성주
@@ -39,7 +39,7 @@
 
 ```markdown
 * e-mail : tjdwn2032@naver.com
-* role : 팀원, DB 설계 및 DB Query 시스템 개발, Front-end 개발
+* role : 팀원, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end개발 
 ```
 
 
@@ -49,7 +49,7 @@
 
 ```markdown
 * e-mail : abzi110@kookmin.ac.kr
-* role : 팀원, AWS 개발, 웹 크롤링을 이용한 빅 데이터 수집 및 분석 시스템 개발
+* role : 팀원, AWS를 이용한 웹 환경 구축과 웹 크롤링 시스템 구축
 ```
 
 ## 4. Abstract
