@@ -13,7 +13,7 @@
 
 ## 2. 소개 영상
 
-[![comeet](http://img.youtube.com/vi/HoR4ngWcaEA/0.jpg)](https://www.youtube.com/watch?v=HoR4ngWcaEA "comeet")
+[![comeet](./img/comeet_logo.jpg)](https://www.youtube.com/watch?v=HoR4ngWcaEA "comeet")
 
 ## 3. 팀 소개
 ### -이정준
