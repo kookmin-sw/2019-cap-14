@@ -1,0 +1,194 @@
+<!doctype html>
+<!--영어 번역 필요-->
+<!--영어와 한글 둘 다 서비스 하는 홈페이지 그 버전? 나누는 html 기법 알아볼 것-->
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style type="text/css">
+      .post-page {
+        width: 900px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        margin: 0 auto 200px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        font-family: "Roboto", sans-serif;
+      }
+      .form .inputsth {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+      }
+      .form .inputsmall {
+        outline: 0;
+        background: #f2f2f2;
+        width: 49%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+      }
+      h3{
+        font-family: "Roboto", sans-serif;
+      }
+      .content-area {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 300px;
+        font-family: "Roboto", sans-serif;
+      }
+      .content-areashort {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 150px;
+        font-family: "Roboto", sans-serif;
+      }
+      .form button {
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        font-family: "Roboto", sans-serif;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .nav-header{
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+      img{
+        width: 80%;
+        height: 300px;
+        display:block;
+        margin: 50px auto;
+      }
+      .form .right {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 45%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        align:right;
+        float: right;
+      }
+      .form .left {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 45%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        float: left;
+      }
+    </style>
+
+  </head>
+
+  <header class="nav-header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <a class="navbar-brand" href="index.html">Co-Meet</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="theme.html">Theme Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="write.html">Post My Tour</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+    <p>
+      <img src="img/img1.png">
+    </p>
+    <div class="post-page">
+      <div class="form">
+        <form class="post-form">
+          <!--어떻게 DB에서 가져오는가?
+            사진 동그랗게는 참고 링크 O-->
+
+          <h4>투어제목</h4>
+          <h4>작은 설명</h4>
+          <h4>설명시작</h4>
+          <h4>여러 추가 사항</h4>
+          <button class="left">연락하기</button><button class="right">예약하기</button>
+        </form>
+      </div>
+    </div>
+  </body>

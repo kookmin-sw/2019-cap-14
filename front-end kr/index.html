@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style type="text/css">
+      .signin-page {
+        width: 500px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .conSearch {
+        z-index: 1;
+        background: #FFFFFF;
+        margin: 0 auto 100px;
+        width: 450px;
+        height: 600px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+      .conSearch input {
+        font-family:"LotteMartDreamLight";
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .conSearch button {
+        font-family:"LotteMartDreamLight";
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+      }
+      .conSearch button:hover,.conSearch button:active,.conSearch button:focus {
+        background: #43A047;
+      }
+      .conSearch .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+      }
+      .conSearch .message a {
+        color: #4CAF50;
+        text-decoration: none;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        font-family:"LotteMartDreamMedium";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .left-side{
+        width: 40%;
+        float: left;
+      }
+      .right-side{
+        width: 58%;
+        float: right;
+      }
+      .nav-header{
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+
+      /* banner */
+      .banner { width:700px; height:400px; top: 50px;  margin:0 auto; padding:0; overflow: hidden;}
+      .banner ul { margin: 0px; padding:0; list-style: none; }
+      .banner ul li {float:center;width:700px; height:400px; margin:0; padding:0;}
+
+      .banner-page {
+        width: 900px;
+
+        padding: 8% 0 0;
+        margin: auto;
+      }
+
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        margin: 0 auto 100px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+    </style>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script language="JavaScript">
+       $(document).ready(function() {
+          //사용할 배너
+          var $banner = $(".banner").find("ul");
+
+          var $bannerWidth = $banner.children().outerWidth();//배너 이미지의 폭
+          var $bannerHeight = $banner.children().outerHeight(); // 높이
+          var $bannerLength = $banner.children().length;//배너 이미지의 갯수
+          var rollingId;
+
+          //정해진 초마다 함수 실행
+          rollingId = setInterval(function() { rollingStart(); }, 3000);//다음 이미지로 롤링 애니메이션 할 시간차
+
+          //마우스 오버시 롤링을 멈춘다.
+          banner.mouseover(function(){
+             //중지
+             clearInterval(rollingId);
+             $(this).css("cursor", "pointer");
+          });
+          //마우스 아웃되면 다시 시작
+          banner.mouseout(function(){
+             rollingId = setInterval(function() { rollingStart(); }, 3000);
+             $(this).css("cursor", "default");
+          });
+
+          function rollingStart() {
+             $banner.css("width", $bannerWidth * $bannerLength + "px");
+             $banner.css("height", $bannerHeight + "px");
+             //alert(bannerHeight);
+             //배너의 좌측 위치를 옮겨 준다.
+             $banner.animate({left: - $bannerWidth + "px"}, 1500, function() { //숫자는 롤링 진행되는 시간이다.
+                //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+                $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                $(this).find("li:first").remove();
+                //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                $(this).css("left", 0);
+                //이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+             });
+          }
+        });
+      </script>
+  </head>
+
+
+  <header class="nav-header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <a class="navbar-brand" href="index.html">Co-Meet</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="theme.html">Theme Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="write.html">Post My Tour</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <br><br><br>
+  <body>
+    <div class="left-side">
+      <div class="conSearch">
+        <h3 class="ex2">당신만의 한국 여행 코스를 찾아보세요.<br>최적화된 코스와 정보를 커밋에서 찾을 수 있습니다.</h3>
+        <div class = "destination">
+          <input type="text" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" class="_1mcoxpnl" id="lp-geocomplete" name="location" placeholder="여행장소" role="combobox" value="">
+        </div>
+        <div class = "fdate">
+        <input type="date" class="_14fdu48d" data-veloute="hdate_input" id="hdate_input" name="hopedate" placeholder="여행 시작 날짜" value="">
+        </div>
+        <p>
+          <div class = "ldate">
+            <select class="browser-default custom-select" data-vars-select-name="cdates" >
+              <option selected>Night/Days</option>
+              <option value="2">당일치기</option>
+              <option value="3">1박 2일</option>
+              <option value="4">2박 3일</option>
+              <option value="5">3박 4일</option>
+            </select>
+          </div>
+        </p>
+        <p>
+          <div class = "theme">
+            <select class="browser-default custom-select" data-vars-select-name="th" >
+              <option selected>theme</option>
+              <option value="2">히든 플레이스</option>
+              <option value="3">맛집 투어</option>
+              <option value="4">음악</option>
+              <option value="5">쇼핑</option>
+              <option value="6">힐링 여행</option>
+              <option value="7">그 외 관광</option>
+            </select>
+          </div>
+        </p>
+        <div class = "search">
+          <button type="submit" class="_1d2e9r9a" aria-busy="false">
+            <span class="_ftj2sg4">Search</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="banner-page">
+        <div class="form">
+           <div class="banner">
+              <ul>
+                 <li><img src="img/wordcloud1.png" width="700px"></li>
+                 <li><img src="img/wordcloud2.png" width="700px"></li>
+                 <li><img src="img/wordcloud3.png" width="700px"></li>
+              </ul>
+           </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
