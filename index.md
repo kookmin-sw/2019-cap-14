@@ -22,7 +22,7 @@
 
 ```markdown
 * e-mail : ejuju1997@naver.com
-* role : 팀장, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end개발
+* role : 팀장, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end/Back-end 개발
 ```
 ### -양동혁
 
@@ -39,7 +39,7 @@
 
 ```markdown
 * e-mail : tjdwn2032@naver.com
-* role : 팀원, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end개발 
+* role : 팀원, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end/Back-end 개발 
 ```
 
 
