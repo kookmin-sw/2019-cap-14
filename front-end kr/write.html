@@ -142,26 +142,36 @@
           <input class="inputsth" type="text" placeholder="게시글 제목"/>
           <div class="control-group">
             <h3>게시글 썸네일:</h3><br><br>
-            <!--bootstrap input file custom-->
-            <p>
-              <form>
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="customFile">
-                  <label class="custom-file-label" for="customFile">파일 찾아보기</label>
+            <form>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                 </div>
-              </form>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+            </form><br>
 
-              <script type="text/javascript">
-                // Add the following code if you want the name of the file appear on select
-                $(".custom-file-input").on("change", function() {
-                  var fileName = $(this).val().split("\\").pop();
-                  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                });
-              </script>
-            </p>
+            <h3>로컬 프로필 사진:</h3><br><br>
+            *되도록 얼굴의 정면 사진을 업로드해주세요.
+            <form>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+            </form><br>
 
-            <h3>투어를 짧게 소개해주세요</h3>
-            <textarea class="content-areashort" placeholder="Please explain your own trip briefly. It is attached to the card section."></textarea><br>
+            <h3>간단한 소개글</h3>
+            <textarea class="content-areashort" placeholder="본인만의 여행을 간략히 설명해주세요. 게시글 설명란에 들어가는 내용입니다."></textarea><br>
 
             <h3>테마 선택</h3>
             <label class="custom-control custom-checkbox">
@@ -192,24 +202,7 @@
 
           <div class="control-group">
             <h3>여행 장소 선택</h3>
-            <!--*현재 소수의 여행지만을 서비스하고 있으나 추후 늘려갈 예정입니다.
-            개발 초기 특정 장소 서비스만 제공. 추후 장소 검색창 서비스 제공하여 원하는 어떤 지역도 가능하도록.
-            장소 통계자료 알아보고 외국인 선호 지역이나 한국 유명 관광지로 일단 리스트 추릴 것.-->
-
-            <p>
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
-                <label class="custom-control-label" for="defaultGroupExample1">광화문, 종로, 명동</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="groupOfDefaultRadios" checked>
-                <label class="custom-control-label" for="defaultGroupExample2">강남</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input" id="defaultGroupExample3" name="groupOfDefaultRadios">
-                <label class="custom-control-label" for="defaultGroupExample3">홍대, 신촌</label>
-              </div>
-            </p>
+            <input class="inputsth" type="text"/>
 
           </div><br>
 
@@ -221,11 +214,14 @@
 
           <!--달력 html 소스 따올 것 ... 영어 api-->
           <h3>가능 날짜:</h3>
-          <input class="inputsmall" type="text" placeholder="요일"/>
-          <input class="inputsmall" type="text" placeholder="시간"/><br>
+          <input class="inputsth" type="text" placeholder="시작 시간(예시: 14:00)"/>
+          <input type="date" name="startday">
+          <input type="date" name="expanday">
+
 
           <button>Post</button>
         </form>
       </div>
     </div>
+
   </body>
