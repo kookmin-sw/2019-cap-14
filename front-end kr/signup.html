@@ -102,6 +102,18 @@
         font-family: "Roboto", sans-serif;
         font-size: 14px;
       }
+
+      .inputsmall {
+        outline: 0;
+        background: #f2f2f2;
+        width: 49%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+      }
     </style>
   </head>
 
@@ -140,14 +152,12 @@
     <div class="signup-page">
       <div class="form">
         <form class="signup-form">
-          <input type="text" class="center" placeholder="이름"/>
-          <div style='display:inline;'><input type="text" class="left" placeholder="email"/>
-              <button class="right">send</button></div>
-          <div style='display:inline;'><input type="text" class="left" placeholder="인증번호"/>
-              <button class="right">확인</button></div>
+          <input type="text" class="inputsmall" placeholder="family name"/>
+          <input type="text" class="inputsmall" placeholder="name"/>
+          <input type="email" class="center" placeholder="email"/>
           <input type="password" class="center" placeholder="비밀번호"/>
           <input type="password" class="center" placeholder="비밀번호 확인"/>
-          <button>sign up</button>
+          <button onclick="location.href='signin.html'" type="button">sign up</button></a>
           <p class="message">이미 계정이 있으신가요? <a href="signin.html">Sign In</a></p>
         </form>
       </div>
