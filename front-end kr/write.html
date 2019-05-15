@@ -1,6 +1,4 @@
 <!doctype html>
-<!--영어 번역 필요-->
-<!--영어와 한글 둘 다 서비스 하는 홈페이지 그 버전? 나누는 html 기법 알아볼 것-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -36,7 +34,7 @@
       .form .inputsmall {
         outline: 0;
         background: #f2f2f2;
-        width: 49%;
+        width: 48%;
         border: 0;
         margin: 0 0 15px;
         padding: 15px;
@@ -212,13 +210,15 @@
           <h3>필요 비용(예상치)</h3>
           <input class="inputsth" type="text" placeholder="$"/><br>
 
-          <!--달력 html 소스 따올 것 ... 영어 api-->
-          <h3>가능 날짜:</h3>
+          <h3>가능 기간:</h3>
           <input class="inputsth" type="text" placeholder="시작 시간(예시: 14:00)"/>
-          <input type="date" name="startday">
-          <input type="date" name="expanday">
-
-
+          <br>
+          <div class = "fdate">
+            <input type="date" class="inputsmall" data-veloute="hdate_input" id="hdate_input" name="hopedate" placeholder="여행 시작 날짜" value="">
+            ~
+            <input type="date" class="inputsmall" data-veloute="hdate_input" id="hdate_input" name="hopedate" placeholder="여행 시작 날짜" value="">
+          </div>
+          
           <button>Post</button>
         </form>
       </div>
