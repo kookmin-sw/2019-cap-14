@@ -1,4 +1,6 @@
 <!doctype html>
+<!--영어 번역 필요-->
+<!--영어와 한글 둘 다 서비스 하는 홈페이지 그 버전? 나누는 html 기법 알아볼 것-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -34,7 +36,7 @@
       .form .inputsmall {
         outline: 0;
         background: #f2f2f2;
-        width: 48%;
+        width: 49%;
         border: 0;
         margin: 0 0 15px;
         padding: 15px;
@@ -207,18 +209,42 @@
           <h3>전체 내용 설명:</h3>
           <textarea class="content-area" placeholder="투어의 정확한 장소, 특징, 장소마다 요구되는 구체적인 비용 등을 상세하게 기술해주세요."></textarea><br>
 
+          <h3>외국어 보유 능력</h3>
+          <input type="checkbox" name="lang" value="eng">영어
+          <input type="checkbox" name="lang" value="china">중국어
+          <input type="checkbox" name="lang" value="jap">일본어
+          <input type="checkbox" name="lang" value="french">불어
+          <input type="input" name="lang" placeholder="그 외 언어"><br>
+
+          <h3>해당되는 언어 수준</h3>
+          <input type="checkbox" name="langLevel" value="high">상
+          <input type="checkbox" name="langLevel" value="middle">중
+          <input type="checkbox" name="langLevel" value="low">하<br>
+
+          <h3>SNS</h3>
+          <input type="checkbox" name="sns" value="facebook">페이스북
+          <input type="checkbox" name="sns" value="instagram">인스타그램
+          <input type="checkbox" name="sns" value="line">라인
+          <input type="checkbox" name="sns" value="kakao">카카오톡
+          <input type="checkbox" name="sns" value="wechat">위챗
+          <input type="input" name="sns" placeholder="그 외 sns"><br>
+
           <h3>필요 비용(예상치)</h3>
           <input class="inputsth" type="text" placeholder="$"/><br>
 
-          <h3>가능 기간:</h3>
-          <input class="inputsth" type="text" placeholder="시작 시간(예시: 14:00)"/>
-          <br>
-          <div class = "fdate">
-            <input type="date" class="inputsmall" data-veloute="hdate_input" id="hdate_input" name="hopedate" placeholder="여행 시작 날짜" value="">
-            ~
-            <input type="date" class="inputsmall" data-veloute="hdate_input" id="hdate_input" name="hopedate" placeholder="여행 시작 날짜" value="">
-          </div>
-          
+          <!--달력 html 소스 따올 것 ... 영어 api-->
+          <h3>가능 날짜:</h3>
+          <input type="checkbox" name="nightDays" value="oneDay">당일치기
+          <input type="checkbox" name="nightDays" value="twoDay">1박2일
+          <input type="checkbox" name="nightDays" value="threeDay">2박3일
+          <input type="checkbox" name="nightDays" value="fourDay">3박4일
+          <input type="checkbox" name="nightDays" value="mores">그 이상
+          <h5>언제부터<h5>
+          <input type="date" name="startday"><br>
+          <h5>언제까지<h5>
+          <input type="date" name="expanday">
+
+
           <button>Post</button>
         </form>
       </div>
