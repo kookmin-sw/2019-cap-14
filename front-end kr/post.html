@@ -1,6 +1,4 @@
 <!doctype html>
-<!--영어 번역 필요-->
-<!--영어와 한글 둘 다 서비스 하는 홈페이지 그 버전? 나누는 html 기법 알아볼 것-->
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,13 +7,11 @@
 
     <style type="text/css">
       .post-page {
-        width: 900px;
-        padding: 8% 0 0;
+        width: 70%;
         margin: auto;
       }
       .form {
         position: relative;
-        z-index: 1;
         background: #FFFFFF;
         margin: 0 auto 200px;
         padding: 45px;
@@ -26,17 +22,6 @@
         outline: 0;
         background: #f2f2f2;
         width: 100%;
-        border: 0;
-        margin: 0 0 15px;
-        padding: 15px;
-        box-sizing: border-box;
-        font-size: 14px;
-        font-family: "Roboto", sans-serif;
-      }
-      .form .inputsmall {
-        outline: 0;
-        background: #f2f2f2;
-        width: 49%;
         border: 0;
         margin: 0 0 15px;
         padding: 15px;
@@ -75,15 +60,12 @@
         text-transform: uppercase;
         outline: 0;
         background: #4CAF50;
-        width: 100%;
         border: 0;
         padding: 15px;
         color: #FFFFFF;
         font-size: 14px;
-        -webkit-transition: all 0.3 ease;
-        transition: all 0.3 ease;
-        cursor: pointer;
         font-family: "Roboto", sans-serif;
+        margin: 30px;
       }
       .form button:hover,.form button:active,.form button:focus {
         background: #43A047;
@@ -101,43 +83,43 @@
         font-family: "Roboto", sans-serif;
         font-size: 14px;
       }
-      img{
-        width: 80%;
-        height: 300px;
+      .thumnail {
+        width: 70%;
+        height: 400px;
         display:block;
         margin: 50px auto;
       }
-      .form .right {
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        outline: 0;
-        background: #4CAF50;
-        width: 45%;
-        border: 0;
-        padding: 15px;
-        color: #FFFFFF;
-        font-size: 14px;
-        -webkit-transition: all 0.3 ease;
-        transition: all 0.3 ease;
-        cursor: pointer;
-        align:right;
-        float: right;
+      .title-form {
+        height: 100px;
       }
-      .form .left {
-        font-family: "Roboto", sans-serif;
-        text-transform: uppercase;
-        outline: 0;
-        background: #4CAF50;
-        width: 45%;
-        border: 0;
-        padding: 15px;
-        color: #FFFFFF;
-        font-size: 14px;
-        -webkit-transition: all 0.3 ease;
-        transition: all 0.3 ease;
-        cursor: pointer;
+      .profile-img {
+        width: 100px; height: 100px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+      }
+      .title-right{
+        width: 180px;
+        float: right;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+      }
+      .title-left{
+        width: 80%;
+        float: right;
+        text-align: left;
+        margin: 0px;
+      }
+      .left-button{
+        width: 40%;
         float: left;
       }
+      .right-button{
+        width: 40%;
+        float: right;
+      }
+
     </style>
 
   </head>
@@ -175,19 +157,49 @@
 
   <body>
     <p>
-      <img src="img/img1.png">
+      <img class="thumnail" src="img/img1.png">
     </p>
     <div class="post-page">
       <div class="form">
         <form class="post-form">
-          <!--어떻게 DB에서 가져오는가?
-            사진 동그랗게는 참고 링크 O-->
+          <div class="title-form">
+              <div class="title-right">
+                <!--로컬 프로필 사진-->
+                <img src="img/img1.png" class="profile-img" style="margin-top: 0px margin-bottom: 0px">
+              </div>
+              <div class="title-left">
+                <h2>투어 제목</h2>
+                <h4>짧은 설명</h4>
+              </div>
+          </div>
+          <hr>
+          <div>
+            <p>
+              장소:
+              <br>
+              테마:
+              <br>
+              투어 내용:
+            </p>
+            <hr>
+            <p>
+              외국어 보유 능력:
+              <br>
+              해당 언어 수준:
+              <br>
+              SNS:
+              <br>
+              SNS ID:
 
-          <h4>투어제목</h4>
-          <h4>작은 설명</h4>
-          <h4>설명시작</h4>
-          <h4>여러 추가 사항</h4>
-          <button class="left">연락하기</button><button class="right">예약하기</button>
+            </p>
+            <hr>
+            <p>
+              필요비용:
+              <br>
+              가능 날짜:
+            </p>
+          </div>
+          <button class="left-button">좋아요</button><button class="right-button">문의하기</button>
         </form>
       </div>
     </div>
