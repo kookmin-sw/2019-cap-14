@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+      .signin-page {
+        width: 600px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .conSearch {
+        position: absolute;
+        z-index: 1;
+        background: #FFFFFF;
+        margin: 0 auto 100px;
+        width: 450px;
+        height: 600px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+      .conSearch input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .conSearch button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+      }
+      .conSearch button:hover,.conSearch button:active,.conSearch button:focus {
+        background: #43A047;
+      }
+      .conSearch .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+      }
+      .conSearch .message a {
+        color: #4CAF50;
+        text-decoration: none;
+      }
+      @font-face {
+        font-family: 'overwatch';
+        src: url('fonts/koverwatch.woff2');
+    }
+    .script{
+      position: absolute;
+      z-index: 1;
+      background: #FFFFFF;
+      margin: 0 auto 100px;
+      width: 450px;
+      height: 600px;
+      padding: 45px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+      nav {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        font-family: "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+    </style>
+  </head>
+  <body>
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <a class="navbar-brand" href="index.html">Co-Meet</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="theme.html">Theme Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="write.html">Post My Tour</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="conSearch">
+          <h3 tabindex="-1" class="ex1">커밋에서 한국 여행코스를 찾아보세요</h3>
+          <h3 class="ex2">처음 가는 여행지에 적합한 여행코스, 여행정보가 커밋에 있습니다.</h3>
+          <div class = "destination">
+            <input type="text" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" class="_1mcoxpnl" id="lp-geocomplete" name="location" placeholder="모든 위치" role="combobox" value="">
+          </div>
+          <div class = "fdate">
+          <input type="date" class="_14fdu48d" data-veloute="hdate_input" id="hdate_input" name="hopedate" placeholder="원하는 날짜" value="">
+          </div>
+          <div class = "ldate">
+            <select id="cdate" name="cdate" class="_bwyiq2l" data-vars-select-name="cdates" >
+                          <option selected="" value="1">박/일</option>
+                          <option value="2">당일치기</option>
+                          <option value="3">1박2일</option>
+                          <option value="4">2박3일</option>
+                          <option value="5">3박4일</option>
+                          <option value="6">4박5일</option>
+                          <option value="7">기타</option>
+                          </select></div>
+          <div class = "theme">
+            <select id="th" name="th" class="_bwyiq2l" data-vars-select-name="th" >
+                          <option selected="" value="1">테마</option>
+                          <option value="2">액티비티</option>
+                          <option value="3">힐링</option>
+                          <option value="4">맛집</option>
+                          <option value="5">히든플레이스</option>
+                          <option value="6">음악</option>
+                          <option value="7">춤</option>
+                          </select>
+          </div>
+          <div class = "search">
+            <button type="submit" class="_1d2e9r9a" aria-busy="false">
+                    <span class="_ftj2sg4">검색</span>
+                  </button>
+          </div>
+          <script src="C:\Users\이정준\Desktop\front-end develop\d3\d3.js"></script>
+            <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
+            <script>
+                var width = 960,
+                    height = 500
+
+                var svg = d3.select("body").append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+                d3.csv("worddata.csv", function (data) {
+                    showCloud(data)
+                    setInterval(function(){
+                         showCloud(data)
+                    },2000)
+                });
+                //scale.linear: 선형적인 스케일로 표준화를 시킨다.
+                //domain: 데이터의 범위, 입력 크기
+                //range: 표시할 범위, 출력 크기
+                //clamp: domain의 범위를 넘어간 값에 대하여 domain의 최대값으로 고정시킨다.
+                wordScale = d3.scale.linear().domain([0, 100]).range([0, 150]).clamp(true);
+                var keywords = ["자리야", "트레이서", "한조"]
+                var svg = d3.select("svg")
+                            .append("g")
+                            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+
+                function showCloud(data) {
+                    d3.layout.cloud().size([width, height])
+                        //클라우드 레이아웃에 데이터 전달
+                        .words(data)
+                        .rotate(function (d) {
+                            return d.text.length > 3 ? 0 : 90;
+                        })
+                        //스케일로 각 단어의 크기를 설정
+                        .fontSize(function (d) {
+                            return wordScale(d.frequency);
+                        })
+                        //클라우드 레이아웃을 초기화 > end이벤트 발생 > 연결된 함수 작동
+                        .on("end", draw)
+                        .start();
+
+                    function draw(words) {
+                        var cloud = svg.selectAll("text").data(words)
+                        //Entering words
+                        cloud.enter()
+                            .append("text")
+                            .style("font-family", "overwatch")
+                            .style("fill", function (d) {
+                                return (keywords.indexOf(d.text) > -1 ? "#fbc280" : "#405275");
+                            })
+                            .style("fill-opacity", .5)
+                            .attr("text-anchor", "middle")
+                            .attr('font-size', 1)
+                            .text(function (d) {
+                                return d.text;
+                            });
+                        cloud
+                            .transition()
+                            .duration(600)
+                            .style("font-size", function (d) {
+                                return d.size + "px";
+                            })
+                            .attr("transform", function (d) {
+                                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                            })
+                            .style("fill-opacity", 1);
+                    }
+                }
+            </script>
+  </body>
+</html>
