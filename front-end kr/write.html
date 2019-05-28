@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-
+    <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 
     <style type="text/css">
@@ -20,7 +20,7 @@
         margin: 0 auto 100px;
         padding: 45px;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-        font-family: "Roboto", sans-serif;
+        font-family: "LotteMartDreamLight", sans-serif;
       }
       .form .inputsth {
         outline: 0;
@@ -31,7 +31,7 @@
         padding: 15px;
         box-sizing: border-box;
         font-size: 14px;
-        font-family: "Roboto", sans-serif;
+        font-family: "LotteMartDreamLight", sans-serif;
       }
       .form .inputsmall {
         outline: 0;
@@ -42,10 +42,10 @@
         padding: 15px;
         box-sizing: border-box;
         font-size: 14px;
-        font-family: "Roboto", sans-serif;
+        font-family: "LotteMartDreamLight", sans-serif;
       }
       h3{
-        font-family: "Roboto", sans-serif;
+        font-family: "LotteMartDreamLight", sans-serif;
       }
       .content-area {
         outline: 0;
@@ -57,7 +57,7 @@
         box-sizing: border-box;
         font-size: 14px;
         height: 300px;
-        font-family: "Roboto", sans-serif;
+        font-family: "LotteMartDreamLight", sans-serif;
       }
       .content-areashort {
         outline: 0;
@@ -69,7 +69,7 @@
         box-sizing: border-box;
         font-size: 14px;
         height: 150px;
-        font-family: "Roboto", sans-serif;
+        font-family: "LotteMartDreamLight", sans-serif;
       }
       .form button {
         text-transform: uppercase;
@@ -83,7 +83,7 @@
         -webkit-transition: all 0.3 ease;
         transition: all 0.3 ease;
         cursor: pointer;
-        font-family: "Roboto", sans-serif;
+        font-family: "LotteMartDreamLight", sans-serif;
       }
       .form button:hover,.form button:active,.form button:focus {
         background: #43A047;
@@ -99,6 +99,17 @@
       }
       .nav-header{
         font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+      .dateinput {
+        font-family:"LotteMartDreamLight";
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
         font-size: 14px;
       }
     </style>
@@ -130,7 +141,7 @@
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control" type="text" placeholder="Search">
-          <button type="button" onclick="location.href='cardcontain.html'">Search</button>
+          <button class="btn btn-success" type="button" onclick="location.href='cardcontain.html'">Search</button>
         </form>
       </div>
     </nav>
@@ -209,44 +220,101 @@
           <h3>전체 내용 설명:</h3>
           <textarea class="content-area" placeholder="투어의 정확한 장소, 특징, 장소마다 요구되는 구체적인 비용 등을 상세하게 기술해주세요."></textarea><br>
 
-          <h3>외국어 보유 능력</h3>
-          <input type="checkbox" name="lang" value="eng">영어
-          <input type="checkbox" name="lang" value="china">중국어
-          <input type="checkbox" name="lang" value="jap">일본어
-          <input type="checkbox" name="lang" value="french">불어
-          <input type="input" name="lang" placeholder="그 외 언어"><br>
+          <p>
+            <h3>외국어 보유 능력</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="lang" value="eng"/>
+              <label class="custom-control-label" for="customCheck">영어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang" value="china"/>
+              <label class="custom-control-label" for="customCheck">중국어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang" value="jap"/>
+              <label class="custom-control-label" for="customCheck">일본어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang" value="french"/>
+              <label class="custom-control-label" for="customCheck">불어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang"/>
+              <label class="custom-control-label" for="customCheck">그 외 언어</label>
+            </label>
+          </p>
 
-          <h3>해당되는 언어 수준</h3>
-          <input type="checkbox" name="langLevel" value="high">상
-          <input type="checkbox" name="langLevel" value="middle">중
-          <input type="checkbox" name="langLevel" value="low">하<br>
+          <p>
+            <h3>해당 언어 스택</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="langLevel" value="high"/>
+              <label class="custom-control-label" for="customCheck">상</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="langLevel" value="middle"/>
+              <label class="custom-control-label" for="customCheck">중</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="langLevel" value="low"/>
+              <label class="custom-control-label" for="customCheck">하</label>
+            </label>
+          </p>
 
-          <h3>SNS</h3>
-          <input type="checkbox" name="sns" value="facebook">페이스북
-          <input type="checkbox" name="sns" value="instagram">인스타그램
-          <input type="checkbox" name="sns" value="line">라인
-          <input type="checkbox" name="sns" value="kakao">카카오톡
-          <input type="checkbox" name="sns" value="wechat">위챗
-          <input type="input" name="sns" placeholder="그 외 sns"><br>
+          <p>
+            <h3>SNS</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="sns" value="facebook"/>
+              <label class="custom-control-label" for="customCheck">페이스북</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="instagram"/>
+              <label class="custom-control-label" for="customCheck">인스타그램</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="line"/>
+              <label class="custom-control-label" for="customCheck">라인</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="kakao"/>
+              <label class="custom-control-label" for="customCheck">카카오톡</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="wechat"/>
+              <label class="custom-control-label" for="customCheck">위챗</label>
+            </label>
+          </p>
 
-          <h3>SNSID</h3>
-          <input type="input" name="snsID" placeholder="SNS ID를 적어주세요"><br>
+          <h3>SNS ID</h3>
+          <input class="inputsth" type="input" name="snsID" placeholder="SNS ID를 적어주세요"><br>
 
 
           <h3>필요 비용(예상치)</h3>
           <input class="inputsth" type="text" placeholder="$"/><br>
 
-          <!--달력 html 소스 따올 것 ... 영어 api-->
-          <h3>가능 날짜:</h3>
-          <input type="checkbox" name="nightDays" value="oneDay">당일치기
-          <input type="checkbox" name="nightDays" value="twoDay">1박2일
-          <input type="checkbox" name="nightDays" value="threeDay">2박3일
-          <input type="checkbox" name="nightDays" value="fourDay">3박4일
-          <input type="checkbox" name="nightDays" value="mores">그 이상
-          <h5>언제부터<h5>
-          <input type="date" name="startday"><br>
-          <h5>언제까지<h5>
-          <input type="date" name="expanday">
+          <p>
+            <h3>가능 날짜</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="nightDays" value="oneDay"/>
+              <label class="custom-control-label" for="customCheck">당일치기</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="nightDays" value="twoDay"/>
+              <label class="custom-control-label" for="customCheck">1박2일</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="nightDays" value="threeDay"/>
+              <label class="custom-control-label" for="customCheck">2박3일</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="nightDays" value="fourDay"/>
+              <label class="custom-control-label" for="customCheck">3박4일</label>
+            </label>
+          </p>
+
+          <h3>언제부터</h3>
+          <input type="date" name="startday" class="dateinput"><br>
+          <h3>언제까지</h3>
+          <input type="date" name="expanday" class="dateinput">
 
 
           <button>Post</button>
