@@ -3,11 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>after-search</title>
+    <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="card_style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 
     <style type="text/css">
+    html{
+      font-size: 100%;
+      font-family: "LotteMartDreamLight";
+    }
+    .search-filter {
+      margin: 30px;
 
+    }
+    .search-filter h3{
+      font-size: 1.3rem;
+    }
     </style>
   </head>
 
@@ -36,33 +47,83 @@
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control" type="text" placeholder="Search">
-          <button type="button" onclick="location.href='cardcontain.html'">Search</button>
+          <button class="btn btn-success" type="button" onclick="location.href='cardcontain.html'">Search</button>
         </form>
       </div>
     </nav>
   </header>
 
   <body>
-    <div>
-      <h3>여행 장소</h3>
-      <h3>night/days</h3>
-      <input type="checkbox" name="sns" value="oneday">당일치기
-      <input type="checkbox" name="sns" value="twodays">1박2일
-      <input type="checkbox" name="sns" value="threedays">2박3일
-      <input type="checkbox" name="sns" value="fourdays">3박4일
-      <hr>
-      <h3>theme</h3>
-      <input type="checkbox" name="theme" value="theme-hiddenplace">히든 플레이스
-      <input type="checkbox" name="theme" value="theme-food">맛집 투어
-      <input type="checkbox" name="theme" value="theme-music">음악
-      <input type="checkbox" name="theme" value="theme-shopping">쇼핑
-      <input type="checkbox" name="theme" value="theme-healing">힐링 여행
-      <input type="checkbox" name="theme" value="theme-theothers">그 외 관광
-      <hr>
-      <input type="checkbox" name="sorting" value="sorting-latest">최신순
-      <input type="checkbox" name="sorting" value="sorting-hittingtime">조회순
-      <input type="checkbox" name="sorting" value="sorting-like">좋아요순
+    <!--
+    <div class="search-filter">
+      <p>
+        <h3>여행장소</h3>
+      </p>
+      <p class="position-left">
+        <h3>night/days</h3>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" checked="checked" class="custom-control-input"/>
+          <label class="custom-control-label" name="sns" value="oneday">당일치기</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label" name="sns" value="twodays">1박2일</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label" name="sns" value="threedays">2박3일</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label" name="sns" value="fourdays">3박4일</label>
+        </label>
+      </p>
+      <p class="position-center">
+        <h3>theme</h3>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" checked="checked" class="custom-control-input"/>
+          <label class="custom-control-label" name="theme" value="theme-hiddenplace">히든 플레이스</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label"  name="theme" value="theme-food">맛집 투어</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label" name="theme" value="theme-music">음악</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label" name="theme" value="theme-shopping">쇼핑</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label"  name="theme" value="theme-healing">힐링 여행</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label" name="theme" value="theme-theothers">그 외 관광</label>
+        </label>
+      </p>
+      <p class="position-right">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" checked="checked" class="custom-control-input"/>
+          <label class="custom-control-label" name="sorting" value="sorting-latest">최신순</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label" name="sorting" value="sorting-hittingtime">조회순</label>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"/>
+          <label class="custom-control-label"name="sorting" value="sorting-like">좋아요순</label>
+        </label>
+      </p>
     </div>
+-->
+
+
+
     <section>
       <div class="container">
         <h3 class="text-secondary mb-0" align="center">local guide</h3>
@@ -74,30 +135,30 @@
             <h1>우리동네 고척동으로 놀러오세요</h1>
             <p class="job-title">이정준</p>
             <p class="about">
-              대한민국 최초의 돔구장과 꽃 산책길로 유명한 안양천이 <br>
-              있는 볼거리, 먹을거리가 넘쳐나는 동네입니다.<br>
+              국내최초의 돔구장과 안양천 산책길!
+              아름다운 우리동네를 소개합니다.
             </p>
             <a href="post.html" class="btn">click</a>
           </div>
           <div class="card">
             <img src="img/muk1.png" alt="card background" class="card-img">
             <img src="img/test2222.png" alt="profile image" class="profile-img">
-            <h1>한국의 맛 묵동! 너와 함께</h1>
+            <h1>한국의 맛 묵동!<br>너와 함께</h1>
             <p class="job-title">양동혁</p>
             <p class="about">
               숨겨진 묵동 맛집<br>
-              이색적인 한국의 맛<br>
+              이색적인 한국의 맛
             </p>
             <a href="post.html" class="btn">click</a>
           </div>
           <div class="card">
             <img src="img/dap1.png" alt="card background" class="card-img">
             <img src="img/test33.png" alt="profile image" class="profile-img">
-            <h1>답십리 주민들의 히든 플레이스</h1>
+            <h1>답십리 주민들의<br>히든 플레이스</h1>
             <p class="job-title">조성주</p>
             <p class="about">
-              로컬들만이 알 수 있는 조용하고<br>
-              안락한 장소들을 소개합니다. <br>
+              로컬들만이 알 수 있는 조용하고
+              안락한 장소들을 소개합니다.
             </p>
             <a href="post.html" class="btn">click</a>
           </div>
