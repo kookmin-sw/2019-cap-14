@@ -1,0 +1,231 @@
+<!doctype html>
+<!--영어 번역 필요-->
+<!--영어와 한글 둘 다 서비스 하는 홈페이지 그 버전? 나누는 html 기법 알아볼 것-->
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style type="text/css">
+      .write-page {
+        width: 700px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        margin: 0 auto 100px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        font-family: "Roboto", sans-serif;
+      }
+      .form .inputsth {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+      }
+      .form .inputsmall {
+        outline: 0;
+        background: #f2f2f2;
+        width: 49%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+      }
+      h3{
+        font-family: "Roboto", sans-serif;
+      }
+      .content-area {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 300px;
+        font-family: "Roboto", sans-serif;
+      }
+      .content-areashort {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 150px;
+        font-family: "Roboto", sans-serif;
+      }
+      .form button {
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        font-family: "Roboto", sans-serif;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .nav-header{
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+    </style>
+
+  </head>
+
+  <header class="nav-header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <a class="navbar-brand" href="index.html">Co-Meet</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="theme.html">Theme Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="write.html">Post My Tour</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="write-page">
+      <div class="form">
+        <form class="write-form">
+          <input class="inputsth" type="text" placeholder="title"/>
+          <div class="control-group">
+            <h3>Attach a representative photo:</h3><br><br>
+            <!--bootstrap input file custom-->
+            <p>
+              <form>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile">
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+              </form>
+
+              <script type="text/javascript">
+                // Add the following code if you want the name of the file appear on select
+                $(".custom-file-input").on("change", function() {
+                  var fileName = $(this).val().split("\\").pop();
+                  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                });
+              </script>
+            </p>
+
+            <h3>Description your content:</h3>
+            <textarea class="content-areashort" placeholder="Please explain your own trip briefly. It is attached to the card section."></textarea><br>
+
+            <h3>choose a travel theme</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">Hidden place</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">Good Hall in the Wall</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">Music</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">Shopping</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">healing trip</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">The other sightseeing</label>
+            </label>
+          </div><br>
+
+          <div class="control-group">
+            <h3>Choose tour place</h3>
+            <!--개발 초기 특정 장소 서비스만 제공. 추후 장소 검색창 서비스 제공하여 원하는 어떤 지역도 가능하도록.
+            장소 통계자료 알아보고 외국인 선호 지역이나 한국 유명 관광지로 일단 리스트 추릴 것.-->
+
+            <!-- Group of default radios - option 1 -->
+            <p>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
+                <label class="custom-control-label" for="defaultGroupExample1">Gwanghwamun, Jongno, Myeong-dong</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="groupOfDefaultRadios" checked>
+                <label class="custom-control-label" for="defaultGroupExample2">Gangnam</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="defaultGroupExample3" name="groupOfDefaultRadios">
+                <label class="custom-control-label" for="defaultGroupExample3">Hongik University, Sinchon</label>
+              </div>
+            </p>
+
+          </div><br>
+
+          <h3>Explanation:</h3>
+          <textarea class="content-area" placeholder="Explain your own tour schedule."></textarea><br>
+
+          <h3>Required cost(expected)</h3>
+          <input class="inputsth" type="text" placeholder="$"/><br>
+
+          <!--달력 html 소스 따올 것 ... 영어 api-->
+          <h3>Schedule:</h3>
+          <input class="inputsmall" type="text" placeholder="Day of the week"/>
+          <input class="inputsmall" type="text" placeholder="Time"/><br>
+
+          <button>Post</button>
+        </form>
+      </div>
+    </div>
+  </body>

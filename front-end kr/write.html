@@ -1,0 +1,325 @@
+<!doctype html>
+<!--영어 번역 필요-->
+<!--영어와 한글 둘 다 서비스 하는 홈페이지 그 버전? 나누는 html 기법 알아볼 것-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style type="text/css">
+      .write-page {
+        width: 700px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        margin: 0 auto 100px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        font-family: "LotteMartDreamLight", sans-serif;
+      }
+      .form .inputsth {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "LotteMartDreamLight", sans-serif;
+      }
+      .form .inputsmall {
+        outline: 0;
+        background: #f2f2f2;
+        width: 49%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "LotteMartDreamLight", sans-serif;
+      }
+      h3{
+        font-family: "LotteMartDreamLight", sans-serif;
+      }
+      .content-area {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 300px;
+        font-family: "LotteMartDreamLight", sans-serif;
+      }
+      .content-areashort {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 150px;
+        font-family: "LotteMartDreamLight", sans-serif;
+      }
+      .form button {
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        font-family: "LotteMartDreamLight", sans-serif;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .nav-header{
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+      .dateinput {
+        font-family:"LotteMartDreamLight";
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+    </style>
+
+  </head>
+
+  <header class="nav-header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <a class="navbar-brand" href="index.html">Co-Meet</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="theme.html">Theme Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="write.html">Post My Tour</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-success" type="button" onclick="location.href='cardcontain.html'">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="write-page">
+      <div class="form">
+        <form class="write-form">
+          <input class="inputsth" type="text" placeholder="게시글 제목"/>
+          <div class="control-group">
+            <h3>게시글 썸네일:</h3><br><br>
+            <form>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+            </form><br>
+
+            <h3>로컬 프로필 사진:</h3><br><br>
+            *되도록 얼굴의 정면 사진을 업로드해주세요.
+            <form>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+            </form><br>
+
+            <h3>간단한 소개글</h3>
+            <textarea class="content-areashort" placeholder="본인만의 여행을 간략히 설명해주세요. 게시글 설명란에 들어가는 내용입니다."></textarea><br>
+
+            <h3>테마 선택</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">히든 플레이스</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">맛집 투어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">음악</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">쇼핑</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">힐링 여행</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"/>
+              <label class="custom-control-label" for="customCheck">그 외 관광</label>
+            </label>
+          </div><br>
+
+          <div class="control-group">
+            <h3>여행 장소 선택</h3>
+            <input class="inputsth" type="text"/>
+
+          </div><br>
+
+          <h3>전체 내용 설명:</h3>
+          <textarea class="content-area" placeholder="투어의 정확한 장소, 특징, 장소마다 요구되는 구체적인 비용 등을 상세하게 기술해주세요."></textarea><br>
+
+          <p>
+            <h3>외국어 보유 능력</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="lang" value="eng"/>
+              <label class="custom-control-label" for="customCheck">영어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang" value="china"/>
+              <label class="custom-control-label" for="customCheck">중국어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang" value="jap"/>
+              <label class="custom-control-label" for="customCheck">일본어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang" value="french"/>
+              <label class="custom-control-label" for="customCheck">불어</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="lang"/>
+              <label class="custom-control-label" for="customCheck">그 외 언어</label>
+            </label>
+          </p>
+
+          <p>
+            <h3>해당 언어 스택</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="langLevel" value="high"/>
+              <label class="custom-control-label" for="customCheck">상</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="langLevel" value="middle"/>
+              <label class="custom-control-label" for="customCheck">중</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="langLevel" value="low"/>
+              <label class="custom-control-label" for="customCheck">하</label>
+            </label>
+          </p>
+
+          <p>
+            <h3>SNS</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="sns" value="facebook"/>
+              <label class="custom-control-label" for="customCheck">페이스북</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="instagram"/>
+              <label class="custom-control-label" for="customCheck">인스타그램</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="line"/>
+              <label class="custom-control-label" for="customCheck">라인</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="kakao"/>
+              <label class="custom-control-label" for="customCheck">카카오톡</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="sns" value="wechat"/>
+              <label class="custom-control-label" for="customCheck">위챗</label>
+            </label>
+          </p>
+
+          <h3>SNS ID</h3>
+          <input class="inputsth" type="input" name="snsID" placeholder="SNS ID를 적어주세요"><br>
+
+
+          <h3>필요 비용(예상치)</h3>
+          <input class="inputsth" type="text" placeholder="$"/><br>
+
+          <p>
+            <h3>가능 날짜</h3>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" checked="checked" class="custom-control-input" name="nightDays" value="oneDay"/>
+              <label class="custom-control-label" for="customCheck">당일치기</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="nightDays" value="twoDay"/>
+              <label class="custom-control-label" for="customCheck">1박2일</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="nightDays" value="threeDay"/>
+              <label class="custom-control-label" for="customCheck">2박3일</label>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="nightDays" value="fourDay"/>
+              <label class="custom-control-label" for="customCheck">3박4일</label>
+            </label>
+          </p>
+
+          <h3>언제부터</h3>
+          <input type="date" name="startday" class="dateinput"><br>
+          <h3>언제까지</h3>
+          <input type="date" name="expanday" class="dateinput">
+
+
+          <button>Post</button>
+        </form>
+      </div>
+    </div>
+
+  </body>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      .signup-page {
+        width: 500px;
+        padding: 8% 0 0;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+      .form .center {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        text-align: center;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .form .left{
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 250px;
+        border: 0;
+        margin: 0 0 15px;
+        text-align: left;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .form .right {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100px;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        align:right;
+      }
+      .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+      .form .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+      }
+      .form .message a {
+        color: #4CAF50;
+        text-decoration: none;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        font-family: "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-page">
+      <div class="form">
+        <form class="signup-form">
+          <input type="text" class="center" placeholder="name"/>
+          <div style='display:inline;'><input type="text" class="left" placeholder="email"/>
+              <button class="right">send</button></div>
+          <div style='display:inline;'><input type="text" class="left" placeholder="authentication code"/>
+              <button class="right">confilm</button></div>
+          <input type="password" class="center" placeholder="password"/>
+          <input type="password" class="center" placeholder="confirm password"/>
+          <button>sign in</button>
+          <p class="message">Already registered? <a href="signin.html">Sign In</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
