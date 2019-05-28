@@ -1,0 +1,140 @@
+service:
+  name: capstone
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  
+package:
+  include:
+    - node_modules/**
+  excludeDevDependencies: false
+
+custom:
+  webpack:
+    includeModules:
+      forceExclude:
+        - aws-sdk
+        - mysql
+        - knex
+        - nodemailer
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: prod
+  region: ap-northeast-2
+
+  environment:
+    AWS_KEY: AKIAUL3JDR4KBWA3F4PZ
+    AWS_SECRET: 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
+    REGION: ap-northeast-2
+    BUCKET_NAME: capstone.images
+    MYSQLHOST: 'capstone-commet.cakjkbpdohs9.ap-northeast-2.rds.amazonaws.com'
+    MYSQLPORT: '3306'
+    MYSQLUSER: 'capstone'
+    MYSQLPASS: '1234567890'
+    MYSQLDATABASE: 'commet'
+
+functions:
+  createUser:
+    handler: user.createUser
+    events:
+      - http:
+          path: user
+          method: post
+          cors: true
+
+  fetchUser:
+    handler: user.fetchUser
+    events:
+      - http:
+          path: user/login
+          method: post
+          cors: true
+
+  confirmSignUp:
+    handler: user.confirmSignUp
+    events:
+      - http:
+          path: user/confirm
+          method: post
+          cors: true
+          request:
+            parameters:
+              querystrings:
+                id: true
+                email: true
+                code: true
+
+  createTheme:
+    handler: theme.createTheme
+    events:
+      - http:
+          path: theme
+          method: post
+          cors: true
+  
+  createPlace:
+    handler: place.createPlace
+    events:
+      - http:
+          path: place
+          method: post
+          cors: true
+  
+  createArticle:
+    handler: article.createArticle
+    events:
+      - http:
+          path: article
+          method: post
+          cors: true
+
+  fetchArticleById:
+    handler: article.fetchArticleById
+    events:
+      - http:
+          path: article/{id}
+          method: get
+          cors: true
+          request:
+            parameters:
+              path:
+                id: true
+
+  likeArticleById:
+    handler: article.likeArticleById
+    events:
+      - http:
+          path: article/{id}
+          method: post
+          cors: true
+          request:
+            parameters:
+              path:
+                id: true
+
+  uploadToS3:
+    handler: article.uploadToS3
+    events:
+      - http:
+          path: file/upload
+          method: get
+          cors: true
+  
+  searchArticles:
+    handler: article.searchArticles
+    events:
+      - http:
+          path: article/search
+          method: post
+          cors: true
+
+  second:
+    handler: second.hello
+    events:
+      - http:
+          method: get
+          path: second
