@@ -1,0 +1,111 @@
+﻿-- user_classification Table Create SQL
+CREATE TABLE user_classification
+(
+    `gcode`  INT            NOT NULL    AUTO_INCREMENT COMMENT '분류번호', 
+    `gname`  VARCHAR(20)    NOT NULL    COMMENT '분류이름', 
+    PRIMARY KEY (gcode)
+);
+
+ALTER TABLE user_classification COMMENT '회원분류';
+
+
+-- board_attach Table Create SQL
+CREATE TABLE board_attach
+(
+    `fcode`  INT     NOT NULL    AUTO_INCREMENT COMMENT '게시판파일번호', 
+    `bname`  INT     NULL        COMMENT '게시글번호', 
+    `ffile`  BLOB    NULL        COMMENT '게시판파일', 
+    PRIMARY KEY (fcode)
+);
+
+ALTER TABLE board_attach COMMENT '게시판첨부';
+
+
+-- user Table Create SQL
+CREATE TABLE user
+(
+    `ucode`   INT            NOT NULL    AUTO_INCREMENT COMMENT '회원번호', 
+    `uname`   VARCHAR(45)    NOT NULL    COMMENT '게시판이름', 
+    `uemail`  VARCHAR(45)    NOT NULL    COMMENT '회원메일', 
+    `uid`     VARCHAR(20)    NOT NULL    COMMENT '아이디', 
+    `upwd`    CHAR(12)       NOT NULL    COMMENT '비밀번호', 
+    `ubirth`  DATE           NULL        COMMENT '생년월일', 
+    `gcode`   INT            NULL        AUTO_INCREMENT COMMENT '분류번호', 
+    PRIMARY KEY (ucode)
+);
+
+ALTER TABLE user COMMENT '회원';
+
+ALTER TABLE user
+    ADD CONSTRAINT FK_user_gcode_user_classification_gcode FOREIGN KEY (gcode)
+        REFERENCES user_classification (gcode) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- board Table Create SQL
+CREATE TABLE board
+(
+    `bcode`  INT            NOT NULL    AUTO_INCREMENT COMMENT '게시판번호', 
+    `scode`  INT            NULL        COMMENT '게시판코드', 
+    `title`  VARCHAR(45)    NOT NULL    COMMENT '게시판제목', 
+    `write`  TEXT           NOT NULL    COMMENT '게시글내용', 
+    `bdate`  DATETIME       NOT NULL    COMMENT '등록일자', 
+    `hits`   INT            NOT NULL    COMMENT '조회수', 
+    `get`    INT            NOT NULL    COMMENT '추전수', 
+    `ucode`  INT            NOT NULL    AUTO_INCREMENT COMMENT '회원번호', 
+    PRIMARY KEY (bcode)
+);
+
+ALTER TABLE board COMMENT '게시판';
+
+ALTER TABLE board
+    ADD CONSTRAINT FK_board_ucode_user_ucode FOREIGN KEY (ucode)
+        REFERENCES user (ucode) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE board
+    ADD CONSTRAINT FK_board_bcode_board_attach_bname FOREIGN KEY (bcode)
+        REFERENCES board_attach (bname) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- board_console Table Create SQL
+CREATE TABLE board_console
+(
+    `scode`  INT            NOT NULL    AUTO_INCREMENT COMMENT '게시판코드', 
+    `sname`  VARCHAR(45)    NULL        COMMENT '게시판이름', 
+    PRIMARY KEY (scode)
+);
+
+ALTER TABLE board_console COMMENT '관리게시판';
+
+ALTER TABLE board_console
+    ADD CONSTRAINT FK_board_console_scode_board_scode FOREIGN KEY (scode)
+        REFERENCES board (scode) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- board_comment Table Create SQL
+CREATE TABLE board_comment
+(
+    `ccode`   INT            NOT NULL    AUTO_INCREMENT COMMENT '댓글번호', 
+    `bcode`   INT            NOT NULL    COMMENT '게시판번호', 
+    `cdate`   DATETIME       NOT NULL    COMMENT '댓글등록날짜', 
+    `cwrite`  VARCHAR(45)    NULL        COMMENT '댓글내용', 
+    PRIMARY KEY (ccode)
+);
+
+ALTER TABLE board_comment COMMENT '게시판댓글';
+
+ALTER TABLE board_comment
+    ADD CONSTRAINT FK_board_comment_bcode_board_bcode FOREIGN KEY (bcode)
+        REFERENCES board (bcode) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
+-- Crawling Table Create SQL
+CREATE TABLE Crawling
+(
+    `kcode`  INT            NOT NULL    AUTO_INCREMENT COMMENT '키워드번호', 
+    `kname`  VARCHAR(45)    NOT NULL    COMMENT '키워드명', 
+    PRIMARY KEY (kcode)
+);
+
+ALTER TABLE Crawling COMMENT '크롤링';
+
+

@@ -1,0 +1,191 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table ARTICLE_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `ARTICLE_INFO`;
+
+CREATE TABLE `ARTICLE_INFO` (
+  `MBR_IDX` int(11) NOT NULL COMMENT '사용자 일련번호',
+  `ART_IDX` int(11) NOT NULL AUTO_INCREMENT COMMENT '글 일련번호',
+  `ART_TITLE` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '글 제목',
+  `ART_THUM_URL` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '대표사진 썸네일 URL 경로',
+  `ART_LOCAL_PROFILE_URL` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '로컬 프로필 URL 경로',
+  `ART_LIKE` int(11) NOT NULL DEFAULT '0' COMMENT '좋아요 수',
+  `ART_VIEW` int(11) NOT NULL DEFAULT '0' COMMENT '조회 수',
+  `ART_AMOUNT` int(11) DEFAULT NULL COMMENT '필요 경비(예상)',
+  `ART_AVAIL_DAY` enum('0','1','2','3','4') COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '가능 날짜 (당일치기, 1박2일, 2박3일, 3박4일, 그이상)',
+  `ART_AVAIL_FROM_TIME` varchar(4) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '가능한 시작시간(HHMM)',
+  `ART_AVAIL_TO_TIME` varchar(4) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '가능한 종료시간(HHMM)',
+  `ART_SHORT_DESC` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '글 축약 설명',
+  `ART_DESC` text COLLATE utf8mb4_unicode_ci COMMENT '글 설명',
+  `ART_REG_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '글 등록일자',
+  PRIMARY KEY (`ART_IDX`),
+  KEY `MBR_IDX` (`MBR_IDX`),
+  CONSTRAINT `article_info_ibfk_1` FOREIGN KEY (`MBR_IDX`) REFERENCES `MEMBER_INFO` (`MBR_IDX`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='컨텐츠 메인 정보 ';
+
+
+
+# Dump of table ARTICLE_PLACE_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `ARTICLE_PLACE_INFO`;
+
+CREATE TABLE `ARTICLE_PLACE_INFO` (
+  `ART_IDX` int(11) NOT NULL COMMENT '글 일련번호 (FK)',
+  `PLACE_IDX` int(11) NOT NULL COMMENT '여행장소 일련번호 (FK)',
+  PRIMARY KEY (`ART_IDX`,`PLACE_IDX`),
+  KEY `FK_ARTICLE_PLACE_INFO_PLACE_INFO` (`PLACE_IDX`),
+  CONSTRAINT `FK_ARTICLE_PLACE_INFO_ARTICLE_INFO` FOREIGN KEY (`ART_IDX`) REFERENCES `ARTICLE_INFO` (`ART_IDX`) ON DELETE CASCADE,
+  CONSTRAINT `FK_ARTICLE_PLACE_INFO_PLACE_INFO` FOREIGN KEY (`PLACE_IDX`) REFERENCES `PLACE_INFO` (`PLACE_IDX`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='해당 글의 여행장소 정보관리';
+
+
+
+# Dump of table ARTICLE_THEME_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `ARTICLE_THEME_INFO`;
+
+CREATE TABLE `ARTICLE_THEME_INFO` (
+  `ART_IDX` int(11) NOT NULL COMMENT '글 일련번호 (FK)',
+  `THEME_IDX` int(11) NOT NULL COMMENT '여행테마 일련번호 (FK)',
+  PRIMARY KEY (`ART_IDX`,`THEME_IDX`),
+  KEY `FK_ARTICLE_THEME_INFO_THEME_INFO` (`THEME_IDX`),
+  CONSTRAINT `FK_ARTICLE_THEME_INFO_ARTICLE_INFO` FOREIGN KEY (`ART_IDX`) REFERENCES `ARTICLE_INFO` (`ART_IDX`) ON DELETE CASCADE,
+  CONSTRAINT `FK_ARTICLE_THEME_INFO_THEME_INFO` FOREIGN KEY (`THEME_IDX`) REFERENCES `THEME_INFO` (`THEME_IDX`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='해당 글의 여행테마 관리';
+
+
+
+# Dump of table AUTH_CODE_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `AUTH_CODE_INFO`;
+
+CREATE TABLE `AUTH_CODE_INFO` (
+  `AUTH_IDX` int(11) NOT NULL AUTO_INCREMENT COMMENT '인증코드 idx',
+  `AUTH_EMAIL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '이메일주소',
+  `AUTH_CODE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '인증번호',
+  `AUTH_REG_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '인증번호 생성일자',
+  PRIMARY KEY (`AUTH_IDX`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='인증번호 발송 관리 테이블\r\n';
+
+LOCK TABLES `AUTH_CODE_INFO` WRITE;
+/*!40000 ALTER TABLE `AUTH_CODE_INFO` DISABLE KEYS */;
+
+INSERT INTO `AUTH_CODE_INFO` (`AUTH_IDX`, `AUTH_EMAIL`, `AUTH_CODE`, `AUTH_REG_DATE`)
+VALUES
+	(1,'judepark@kookmin.ac.kr','569367','2019-05-26 06:49:40'),
+	(2,'judeparknn@kookmin.ac.kr','565097','2019-05-26 06:49:56'),
+	(3,'judeparknmmn@kookmin.ac.kr','294953','2019-05-26 06:52:19');
+
+/*!40000 ALTER TABLE `AUTH_CODE_INFO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table KEYWORD_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `KEYWORD_INFO`;
+
+CREATE TABLE `KEYWORD_INFO` (
+  `KEYWORD_NAME` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '키워드 단어',
+  `KEYWORD_COUNT` int(11) NOT NULL COMMENT '카운트 수',
+  `KEYWORD_REG_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '키워드 등록일자',
+  PRIMARY KEY (`KEYWORD_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='크롤링 키워드 단어관리';
+
+
+
+# Dump of table MEMBER_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `MEMBER_INFO`;
+
+CREATE TABLE `MEMBER_INFO` (
+  `MBR_IDX` int(11) NOT NULL AUTO_INCREMENT COMMENT '사용자 일련번호',
+  `MBR_EMAIL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '이메일주소',
+  `MBR_AUTH_STATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'REQUESTED' COMMENT '인증 코드',
+  `MBR_NAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '이름',
+  `MBR_PWD` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '패스워드',
+  `MBR_SNS_ID` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'SNS ID',
+  `MBR_REG_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '등록일자',
+  PRIMARY KEY (`MBR_IDX`),
+  UNIQUE KEY `MBR_EMAIL` (`MBR_EMAIL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='가입자 정보';
+
+LOCK TABLES `MEMBER_INFO` WRITE;
+/*!40000 ALTER TABLE `MEMBER_INFO` DISABLE KEYS */;
+
+INSERT INTO `MEMBER_INFO` (`MBR_IDX`, `MBR_EMAIL`, `MBR_AUTH_STATUS`, `MBR_NAME`, `MBR_PWD`, `MBR_SNS_ID`, `MBR_REG_DATE`)
+VALUES
+	(1,'judepark@kookmin.ac.kr','REQUESTED','name','password',NULL,'2019-05-26 06:49:40'),
+	(3,'judeparknn@kookmin.ac.kr','REQUESTED','name','password',NULL,'2019-05-26 06:49:56'),
+	(4,'judeparknmmn@kookmin.ac.kr','REQUESTED','name','password',NULL,'2019-05-26 06:52:19');
+
+/*!40000 ALTER TABLE `MEMBER_INFO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table NEWS_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `NEWS_INFO`;
+
+CREATE TABLE `NEWS_INFO` (
+  `NEWS_IDX` int(11) NOT NULL AUTO_INCREMENT COMMENT '뉴스 일련번호',
+  `NEWS_TITLE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '뉴스 제목',
+  `NEWS_URL` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '뉴스 URL 경로',
+  `NEWS_REG_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '뉴스 등록일자',
+  PRIMARY KEY (`NEWS_IDX`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='크롤링 키워드 단어관리';
+
+
+
+# Dump of table PLACE_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `PLACE_INFO`;
+
+CREATE TABLE `PLACE_INFO` (
+  `PLACE_IDX` int(11) NOT NULL AUTO_INCREMENT COMMENT '여행장소 일련번호',
+  `PLACE_NAME` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '여행장소 이름',
+  `PLACE_USE_YN` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Y' COMMENT '여행장소 사용여부(''Y'', ''N'')',
+  `PLACE_REG_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '여행장소 등록일자',
+  PRIMARY KEY (`PLACE_IDX`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='여행장소 관리 테이블';
+
+
+
+# Dump of table THEME_INFO
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `THEME_INFO`;
+
+CREATE TABLE `THEME_INFO` (
+  `THEME_IDX` int(11) NOT NULL AUTO_INCREMENT COMMENT '여행테마 일련번호',
+  `THEME_NAME` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '여행테마 이름',
+  `THEME_USE_YN` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Y' COMMENT '여행테마 사용여부(''Y'', ''N'')',
+  `THEME_REG_DATE` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '여행테마 등록일자',
+  PRIMARY KEY (`THEME_IDX`),
+  UNIQUE KEY `THEME_NAME` (`THEME_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT=' 테마 관리 테이블\r\n';
+
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
