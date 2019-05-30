@@ -1,11 +1,10 @@
-from konlpy.tag import Twitter
 from collections import Counter
 import re
 import string
+import csv
 
 def get_kor_tags(text):
-    spliter = Twitter()
-    nouns = spliter.nouns(text)
+    nouns = text.split(",")
     count = Counter(nouns)
     return_list = []
     for n, c in count.most_common():
@@ -15,7 +14,7 @@ def get_kor_tags(text):
 
 def main():
     input_file_name = input("input file name :: ")
-    output_file_name = "output.txt"
+    output_file_name = "output.csv"
     input_text = open(input_file_name + ".txt", 'r', -1, "utf-8")
     text = input_text.read()
     frequency = {}
@@ -26,13 +25,20 @@ def main():
     frequency_list = frequency.keys()
     tags = get_kor_tags(text)
     input_text.close()
-    output_text = open(input_file_name + output_file_name, 'w', -1, "utf-8")
+    output_text = open(input_file_name + output_file_name, 'w', -1)
+    output_text.write('text,frequency\n')
     for tag in tags:
         noun = tag['tag']
         count = tag['count']
-        output_text.write('#{} {}\n'.format(noun, count))
+        if count >= 3:
+            output_text.write('#{},{}\n'.format(noun, count))
+        else:
+            pass
     for words in frequency_list:
-        output_text.write('#{} {}\n'.format(words, frequency[words]))
+        if count >= 3:
+            output_text.write('#{},{}\n'.format(words, frequency[words]))
+        else:
+            pass
     output_text.close() 
  
 if __name__ == '__main__':
