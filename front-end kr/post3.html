@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style type="text/css">
+      .post-page {
+        width: 70%;
+        margin: auto;
+      }
+      .form {
+        position: relative;
+        background: #FFFFFF;
+        margin: 0 auto 200px;
+        padding: 45px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        font-family: "Roboto", sans-serif;
+      }
+      .form .inputsth {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+      }
+      h3{
+        font-family: "Roboto", sans-serif;
+      }
+      .content-area {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 300px;
+        font-family: "Roboto", sans-serif;
+      }
+      .content-areashort {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        height: 150px;
+        font-family: "Roboto", sans-serif;
+      }
+      .form button {
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        margin: 30px;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #76b852, #8DC26F);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .nav-header{
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+      .thumnail {
+        width: 70%;
+        height: 400px;
+        display:block;
+        margin: 50px auto;
+      }
+      .title-form {
+        height: 100px;
+      }
+      .profile-img {
+        width: 100px; height: 100px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+      }
+      .title-right{
+        width: 180px;
+        float: right;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+      }
+      .title-left{
+        width: 80%;
+        float: right;
+        text-align: left;
+        margin: 0px;
+      }
+      .left-button{
+        width: 40%;
+        float: left;
+      }
+      .right-button{
+        width: 40%;
+        float: right;
+      }
+
+    </style>
+
+  </head>
+
+  <header class="nav-header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <a class="navbar-brand" href="index.html">Co-Meet</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="theme.html">Theme Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="write.html">Post My Tour</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-success" type="button" onclick="location.href='cardcontain.html'">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+    <p>
+      <!--글쓰기 페이지에서 받은 썸네일 사진-->
+      <img class="thumnail" src="img/dap1.png">
+    </p>
+    <div class="post-page">
+      <div class="form">
+        <form class="post-form">
+          <div class="title-form">
+              <div class="title-right">
+                <!--로컬 프로필 사진-->
+                <img src="img/test33.png" class="profile-img" style="margin-top: 0px margin-bottom: 0px">
+              </div>
+              <div class="title-left">
+                <h2>답십리 주민들의 히든 플레이스</h2>
+                <h4>로컬들만이 알 수 있는 조용하고 안락한 장소들을 소개합니다.</h4>
+              </div>
+          </div>
+          <hr>
+          <div>
+            <p>
+              장소:서울시 동대문구 답십리동, 청량리동
+              <br>
+              테마:히든 플레이스, 맛집
+              <br>
+              투어내용:1. 커피그라운즈
+                         주민들도 알기 어려운 위치에 있으며, 오픈 시간 또한 자유롭고 짧은 편
+                         평일 15:00~17:30/일요일 12:30~17:00의 짧은 오픈 시간에도 불구하고 좋은 품질(커피어워드)의 원두,
+                         더치커피 판매 및 싼 가격으로 소소한 인기를 누리고 있다.
+                         커피(아메리카노, 카페라떼) 테이크 아웃 2000\, 더치커피 6000~10000\
+                      2. 산책로
+                        (커피그라운즈 근처에 있는) 촬영소로 유명했던 언덕의 산을 올라 산책을 한다.
+                        차도를 만들기 위해 산의 중앙을 가로지르는 도로 위의 다리 위에서 풍경을 바라볼 수 있다.
+                        이후 청량리로 이동, 버스 3220 (1300\)
+                      3. 홍능족발
+                         이미 유명한 맛집으로 동남아식 튀김 족발이 유명한 식당이다.
+              </p>
+            <hr>
+            <p>
+              외국어 보유 능력:영어
+              <br>
+              해당 언어 수준:중
+              <br>
+              SNS:인스타그램
+              <br>
+              SNS ID:tjdwn2032
+
+            </p>
+            <hr>
+            <p>
+              필요비용:43,000원(2인기준)
+              <br>
+              가능 날짜:당일치기
+            </p>
+          </div>
+          <button class="left-button">좋아요</button><button class="right-button">문의하기</button>
+        </form>
+      </div>
+    </div>
+  </body>
