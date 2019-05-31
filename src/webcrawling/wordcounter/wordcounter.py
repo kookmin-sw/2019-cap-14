@@ -3,10 +3,11 @@ import re
 import string
 import csv
 
-def get_kor_tags(text):
+def get_tags(text):
     nouns = text.split(",")
     count = Counter(nouns)
     return_list = []
+    #sorting noun by count
     for n, c in count.most_common():
         temp = {'tag': n, 'count': c}
         return_list.append(temp)
@@ -15,30 +16,28 @@ def get_kor_tags(text):
 def main():
     input_file_name = input("input file name :: ")
     output_file_name = "output.csv"
-    input_text = open(input_file_name + ".txt", 'r', -1, "utf-8")
+    input_text = open(input_file_name + ".txt", 'r', -1)
+
     text = input_text.read()
-    frequency = {}
-    get_eng_text = re.findall(r'\b[0-9a-zA-Z]{3,15}\b', text)
-    for word in get_eng_text:
-        count = frequency.get(word,0)
-        frequency[word] = count + 1
-    frequency_list = frequency.keys()
-    tags = get_kor_tags(text)
-    input_text.close()
+    text = text.replace("\n", ",")
+    tags = get_tags(text)
     output_text = open(input_file_name + output_file_name, 'w', -1)
     output_text.write('text,frequency\n')
+    #set minimum frequency
+    minfreq = 5
     for tag in tags:
         noun = tag['tag']
         count = tag['count']
-        if count >= 3:
-            output_text.write('#{},{}\n'.format(noun, count))
-        else:
+        if noun == ' ':
             pass
-    for words in frequency_list:
-        if count >= 3:
-            output_text.write('#{},{}\n'.format(words, frequency[words]))
-        else:
+        elif noun == '':
             pass
+        else:
+            if count >= minfreq:
+                output_text.write('#{},{}\n'.format(noun, count))
+            else:
+                pass
+    input_text.close()
     output_text.close() 
  
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ from selenium import webdriver
 
 #input keyword
 tag = input("input keyword :: ")
-f = open(tag + '.txt', 'w', encoding='UTF-8', newline='')
+f = open(tag + '.txt', 'w', newline='')
 wr = csv.writer(f)
 
 #invisible chromedriver
@@ -24,7 +24,7 @@ hashtag_regex = "#([0-9a-zA-Z가-힣]*)"
 p = re.compile(hashtag_regex)
 Scrapcount = 1
 #set scraping number
-while Scrapcount <= 5:
+while Scrapcount <= 20:
     print(Scrapcount)
     try:
         hashtagtext = driver.find_element_by_class_name('P9YgZ').text
