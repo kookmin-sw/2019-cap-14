@@ -14,6 +14,7 @@
 ## 2. 소개 영상
 
 [![comeet](./img/comeet_logo.jpg)](https://www.youtube.com/watch?v=HoR4ngWcaEA "comeet")
+커밋사이트 http://comeet-test-1.s3-website.ap-northeast-2.amazonaws.com
 
 ## 3. 팀 소개
 
@@ -42,7 +43,7 @@
 
 ```markdown
 * e-mail : tjdwn2032@naver.com
-* role : 팀원, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end,Back-end 개발 
+* role : 팀원, 웹 페이지 디자인 및 html, css, javascript를 이용한 Front-end,Back-end 개발
 ```
 
 
