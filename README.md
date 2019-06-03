@@ -14,7 +14,7 @@
 ## 2. 소개 영상
 
 [![comeet](./img/comeet_logo.jpg)](https://www.youtube.com/watch?v=HoR4ngWcaEA "comeet")
-커밋사이트 http://comeet-test-1.s3-website.ap-northeast-2.amazonaws.com
+http://comeet-test-1.s3-website.ap-northeast-2.amazonaws.com
 
 
 ## 3. 팀 소개
